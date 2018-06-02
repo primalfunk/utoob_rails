@@ -1,2 +1,7 @@
-<h1>Movies#show</h1>
-<p>Find me in app/views/movies/show.html.erb</p>
+
+
+<h1 class="ui header center"><%= @movie.title %></h1>
+<br />
+<div class="video center">
+  <iframe src="<%= @movie.trailer %>?set=3" class="space"></iframe>
+</div>
