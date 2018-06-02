@@ -1,24 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-<div class="ui card">
-<div class="content">
-    <p class="header">
-        <h1><%= @movies.name %> - <%= @comment %></h1>
-        <hr />
-    </p>
+<h1>Comment for <%= @movie.title %></h1>
+<hr />
 <table>
     <tr>
         <th>Comment</th>
     </tr>
     <tr>
-        <td><%= @comment %><td>
+        <td><%= @comment.body %><td>
     </tr>
 </table>
 <hr />
-<div class="extra content">
-    <%= link_to 'Back', @title.movie_id, @movie%>
-    <br />
-    <%= link_to 'Edit', edit_movie_comment_path([@title, @comment])%>
-    <br />
-    <%= link_to 'Delete', [@title, @comment], method: :delete%>
-</div>
+<%= link_to 'Back', movie_path(@movie) %>
+<br />
+<%= link_to 'Edit', edit_movie_comment_path([@movie, @comment])%>
+<br />
+<%= link_to 'Delete', [@movie, @comment], method: :delete%>

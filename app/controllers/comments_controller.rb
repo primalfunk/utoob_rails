@@ -11,11 +11,11 @@ class CommentsController < ApplicationController
 
   def new
     @comment = @movie.comments.new
-    render partial: "form"
+    render "form"
   end
 
   def edit
-    render partial: "form"
+    render "form"
   end
 
   def create
