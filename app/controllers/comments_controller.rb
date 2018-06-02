@@ -20,8 +20,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @movie.comments.new(comment_params)
-    @comment.username = current_user.first_name
-
+    @comment.username = current_user.first_name + " " + current_user.last_name
     if @comment.save
       redirect_to movie_path(@movie)
     else
@@ -30,6 +29,7 @@ class CommentsController < ApplicationController
   end
 
   def update
+    puts "Attempting to update on #{comment_params}... look at this!"
     if @comment.update(comment_params)
       redirect_to movie_path(@movie)
     else
