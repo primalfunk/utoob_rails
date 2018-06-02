@@ -1,8 +1,8 @@
-<h1>Utoob</h1>
-<h1 class="ui header">Videos</h1>
-<%= link_to 'New Movie', new_movie_path %>
+<h1 class="bigtitle">Utoob (powered by Ruby on Rails)</h1>
+<h1 class="ui header">Movies</h1>
+<%= link_to 'Create New Movie', new_movie_path %>
 <hr />
-<h2>Drama</h2>
+<h2>Genre: <strong>Drama</strong></h2>
 <hr />
 <div class="ui divider"></div>
 <div class="ui grid">
@@ -29,7 +29,7 @@
    </div>
  <% end %>
 </div>
-<h2>Action</h2>
+<h2>Genre: <strong>Action</strong></h2>
 <hr />
 <div class="ui grid">
  <% @movies.where(genre: "Action").find_each do |movie| %>
@@ -55,7 +55,7 @@
    </div>
  <% end %>
 </div>
-<h2>Comedy</h2>
+<h2>Genre: <strong>Comedy</strong></h2>
 <hr />
 <div class="ui grid">
  <% @movies.where(genre: "Comedy").find_each do |movie| %>

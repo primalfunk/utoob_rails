@@ -1,4 +1,17 @@
+$font-url: "https://fonts.googleapis.com/css?family=Old+Standard+TT";
+$font-name: 'Old Standard TT' !default;
+$font-family: $font-name, 'Helvetica Neue', Arial, Helvetica, sans-serif !default;
 @import 'semantic-ui';
+
+body {
+  text-align: center;
+  background-color: lightcyan;
+  margin: 50px;
+}
+
+.bigtitle {
+  font-size: 30px;
+}
 
 .center {
 text-align: center;
