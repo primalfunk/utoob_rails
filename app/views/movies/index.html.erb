@@ -1,21 +1,13 @@
-<<<<<<< HEAD
 <h1 class="bigtitle">--< Utoob (powered by Ruby on Rails) >--</h1>
 <h1 class="ui header">Movies</h1>
 <%= link_to 'Create New Movie', new_movie_path %>
 <hr />
 <h2>Genre: <strong>Drama</strong></h2>
 <hr />
-=======
 
-
-<h1>Utoob</h1>
-
-<h1 class="ui header">Videos</h1>
-<%= link_to 'New Movie', new_movie_path %>
->>>>>>> commit add link
 <div class="ui divider"></div>
 <div class="ui grid">
-<<<<<<< HEAD
+
  <% @movies.where(genre: "Drama").find_each do |movie| %>
    <div class="sixteen wide mobile eight wide tablet four wide computer column">
      <div class="ui card">
@@ -68,11 +60,10 @@
 <h2>Genre: <strong>Comedy</strong></h2>
 <hr />
 <div class="ui grid">
- <% @movies.where(genre: "Comedy").find_each do |movie| %>
-=======
-<<<<<<< HEAD
+ <% @movies.where(genre: "Comedy").find_each{ |movie| } %>
+
  <% @movies.each do |movie| %>
->>>>>>> commit add link
+
    <div class="sixteen wide mobile eight wide tablet four wide computer column">
      <div class="ui card">
        <div class="video">
@@ -95,28 +86,3 @@
    </div>
  <% end %>
 </div>
-=======
-  <% @movies.each do |movie| %>
-    <div class="sixteen wide mobile eight wide tablet four wide computer column">
-      <div class="ui card">
-        <div class="video">
-          <iframe src="<%= movie.trailer %>?set=3" ></iframe>
-        </div>
-        <div class="content">
-          <%= link_to "#{movie.title} ", movie, class: "header" %>
-        </div>
-        <div class="extra content">
-          <div class="ui two buttons">
-            <div class="basic green button">
-              <%= link_to 'Edit', edit_movie_path(movie) %>
-            </div>
-            <div class="basic red button">
-              <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  <% end %>
-</div>
->>>>>>> commit add link
