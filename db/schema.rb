@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 2018_06_02_195814) do
     t.string "trailer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "like"
-    t.string "dislike"
+    t.integer "like"
+    t.integer "dislike"
   end
 
   create_table "users", force: :cascade do |t|

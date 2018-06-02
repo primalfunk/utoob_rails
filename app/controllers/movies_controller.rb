@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  before_action :set_movie, only: [:show, :edit, :update, :destroy, :like, :dislike]
 
   def index
     @movies = Movie.all
@@ -13,7 +13,7 @@ class MoviesController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   def create
@@ -37,6 +37,28 @@ class MoviesController < ApplicationController
     @movie.destroy
     redirect_to movies_path
   end
+
+  def like
+    if @movie.like.nil?
+      @movie.like = 1
+    else
+      @movie.like += 1
+    end
+    @movie.save
+    redirect_to movie_path(@movie)
+  end
+
+  def dislike
+    if @movie.dislike.nil?
+      @movie.dislike = 1
+    else
+      @movie.dislike += 1
+    end
+    @movie.save
+    redirect_to movie_path(@movie)
+  end
+
+
 
   private
     def set_movie

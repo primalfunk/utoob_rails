@@ -3,6 +3,15 @@
 <div class="video center">
   <iframe src="<%= @movie.trailer %>?set=3" class="space"></iframe>
 </div>
+<br />
+<br />
+<div class="center">
+    <%= link_to '<i class="thumbs up icon"></i>'.html_safe, movie_like_path(@movie) %>
+    <%= @movie.like %>
+    
+    <%= link_to '<i class="thumbs down icon"></i>'.html_safe, movie_dislike_path(@movie) %>
+    <%= @movie.dislike %>
+</div>
 <hr />
 <%= link_to 'Create New Comment', new_movie_comment_path(@movie) %>
 <h3>User comments for: <%= @movie.title %></h3>
