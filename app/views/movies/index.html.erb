@@ -1,11 +1,64 @@
 <h1>Utoob</h1>
-
 <h1 class="ui header">Videos</h1>
 <%= link_to 'New Movie', new_movie_path %>
+<hr />
+<h2>Drama</h2>
+<hr />
 <div class="ui divider"></div>
-
 <div class="ui grid">
- <% @movies.each do |movie| %>
+ <% @movies.where(genre: "Drama").find_each do |movie| %>
+   <div class="sixteen wide mobile eight wide tablet four wide computer column">
+     <div class="ui card">
+       <div class="video">
+         <iframe src="<%= movie.trailer %>?set=3" ></iframe>
+       </div>
+       <div class="content">
+         <%= link_to "#{movie.title} ", movie, class: "header" %>
+       </div>
+       <div class="extra content">
+         <div class="ui two buttons">
+           <div class="basic green button">
+             <%= link_to 'Edit', edit_movie_path(movie) %>
+           </div>
+           <div class="basic red button">
+             <%= link_to 'Destroy', movie_path(movie), method: :delete, data: { confirm: "Promise you're an admin?" } %>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ <% end %>
+</div>
+<h2>Action</h2>
+<hr />
+<div class="ui grid">
+ <% @movies.where(genre: "Action").find_each do |movie| %>
+   <div class="sixteen wide mobile eight wide tablet four wide computer column">
+     <div class="ui card">
+       <div class="video">
+         <iframe src="<%= movie.trailer %>?set=3" ></iframe>
+       </div>
+       <div class="content">
+         <%= link_to "#{movie.title} ", movie, class: "header" %>
+       </div>
+       <div class="extra content">
+         <div class="ui two buttons">
+           <div class="basic green button">
+             <%= link_to 'Edit', edit_movie_path(movie) %>
+           </div>
+           <div class="basic red button">
+             <%= link_to 'Destroy', movie_path(movie), method: :delete, data: { confirm: "Promise you're an admin?" } %>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ <% end %>
+</div>
+<h2>Comedy</h2>
+<hr />
+<div class="ui grid">
+ <% @movies.where(genre: "Comedy").find_each do |movie| %>
    <div class="sixteen wide mobile eight wide tablet four wide computer column">
      <div class="ui card">
        <div class="video">
