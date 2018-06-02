@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
  root 'movies#index'
 
- resource :users do
-   resource :comments
+ resources :users do
+   resources :comments
  end
 
- resource :movies do
-   resource :comments
+ resources :movies do
+   resources :comments
  end
-
 end
