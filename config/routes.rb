@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- root 'movie#index'
+ root 'movies#index'
 
  resource :users do
    resource :comments
