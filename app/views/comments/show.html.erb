@@ -9,6 +9,8 @@
     </tr>
 </table>
 <hr />
-<%= link_to 'Back', %>
-<%= link_to 'Edit', %>
-<%= link_to 'Delete', %>
+<%= link_to 'Back', @title.movie_id, @movie%>
+<br />
+<%= link_to 'Edit', edit_movie_comment_path([@title, @comment])%>
+<br />
+<%= link_to 'Delete', [@title, @comment], method: :delete%>
