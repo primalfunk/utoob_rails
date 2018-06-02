@@ -8,5 +8,5 @@ class Comment < ApplicationRecord
      self.user = 'anon'
    end
  end
-end
+
 end
