@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
- root 'movies#index'
+ root 'movie#index'
+
+ resources :users do
+   resources :comments
+ end
+
+ resources :movies do
+   resources :comments
+ end
 
   resources :movies do
     resources :comments
