@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'uploads/show'
+  get 'uploads/new'
  root 'movies#index'
  devise_for :users
 
