@@ -1,7 +1,16 @@
-
-
 <h1 class="ui header center"><%= @movie.title %></h1>
 <br />
 <div class="video center">
   <iframe src="<%= @movie.trailer %>?set=3" class="space"></iframe>
 </div>
+<hr />
+<%= link_to 'Create New Comment', new_movie_comment_path(@movie) %>
+<h3>User comments for: <%= @movie.title %></h3>
+<% @movie.comments.each do |comment| %>
+ <%= comment.body %>
+ <%= link_to 'Edit', edit_movie_comment_path(comment.movie_id) %> |
+ <%= link_to 'Delete', [@movie, comment], method: :delete %>
+ <hr />
+<% end %>
+
+
