@@ -1,2 +1,6 @@
-<h1>Uploads#show</h1>
-<p>Find me in app/views/uploads/show.html.erb</p>
+<h1>Uploads Show Page</h1>
+<% current_user.uploads.each do |upload| %>
+  <div class="video">
+         <iframe src="<%= upload.movie %>?set=3" ></iframe>
+       </div>
+<% end %> 
