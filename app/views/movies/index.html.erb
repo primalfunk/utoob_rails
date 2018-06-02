@@ -1,5 +1,30 @@
-<%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
-<h2>Welcome <%= current_user.first_name %> </h2>
+<h1>Utoob</h1>
 
-<h1>Movies Index</h1>
-<p>Find me in app/views/movies/index.html.erb</p>
+<h1 class="ui header">Videos</h1>
+<%= link_to 'New Movie', new_movie_path %>
+<div class="ui divider"></div>
+
+<div class="ui grid">
+ <% @movies.each do |movie| %>
+   <div class="sixteen wide mobile eight wide tablet four wide computer column">
+     <div class="ui card">
+       <div class="video">
+         <iframe src="<%= movie.trailer %>?set=3" ></iframe>
+       </div>
+       <div class="content">
+         <%= link_to "#{movie.title} ", movie, class: "header" %>
+       </div>
+       <div class="extra content">
+         <div class="ui two buttons">
+           <div class="basic green button">
+             <%= link_to 'Edit', edit_movie_path(movie) %>
+           </div>
+           <div class="basic red button">
+             <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ <% end %>
+</div>
