@@ -3,6 +3,7 @@ $font-name: 'Old Standard TT' !default;
 $font-family: $font-name, 'Helvetica Neue', Arial, Helvetica, sans-serif !default;
 @import 'semantic-ui';
 
+<<<<<<< HEAD
 body {
   text-align: center;
   background-color: lightcyan;
@@ -16,10 +17,14 @@ body {
 .center {
 text-align: center;
 }
+=======
+.navbar {
+  color: black;
+  background-color: red;
+  padding: 5px;
+  height: 30px;
+>>>>>>> commit add link
 
-.space {
-  width: 1000px;
-  height: 500px;
 }
 
 i.icon, i.cons {
