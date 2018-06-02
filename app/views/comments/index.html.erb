@@ -1,5 +1,15 @@
-<h1>Comments about <%= @movie.name %></h1>
-<% @movie.comments.each do |comment| %>
-<%= comment %>
-<% end %>
+<p id="notice"><%= notice %></p>
+<h1 class= "ui header">Comments</h1>
+<br />
+<h1>Comments about <%= @movie.title %></h1>
+<%= link_to 'Create a new comment', new_comment(@comment) %>
+<div class="ui divider"></div>
+<ul>
+<% @movie.comment.each do |comment| %>
+<div class="sixteen wide mobile eight wide tablet four wide computer column">
+</div>    
+<%= Comment %>
+</ul>
+</div>
 
+<% end %>

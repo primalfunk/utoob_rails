@@ -1,5 +1,11 @@
-<h1><%= @movies.name %> - <%= @comment %></h1>
-<hr />
+<p id="notice"><%= notice %></p>
+
+<div class="ui card">
+<div class="content">
+    <p class="header">
+        <h1><%= @movies.name %> - <%= @comment %></h1>
+        <hr />
+    </p>
 <table>
     <tr>
         <th>Comment</th>
@@ -9,8 +15,10 @@
     </tr>
 </table>
 <hr />
-<%= link_to 'Back', @title.movie_id, @movie%>
-<br />
-<%= link_to 'Edit', edit_movie_comment_path([@title, @comment])%>
-<br />
-<%= link_to 'Delete', [@title, @comment], method: :delete%>
+<div class="extra content">
+    <%= link_to 'Back', @title.movie_id, @movie%>
+    <br />
+    <%= link_to 'Edit', edit_movie_comment_path([@title, @comment])%>
+    <br />
+    <%= link_to 'Delete', [@title, @comment], method: :delete%>
+</div>
