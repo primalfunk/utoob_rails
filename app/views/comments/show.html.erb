@@ -1,2 +1,14 @@
-<h1>Comments#show</h1>
-<p>Find me in app/views/comments/show.html.erb</p>
+<h1><%= @movies.name %> - <%= @comment %></h1>
+<hr />
+<table>
+    <tr>
+        <th>Comment</th>
+    </tr>
+    <tr>
+        <td><%= @comment %><td>
+    </tr>
+</table>
+<hr />
+<%= link_to 'Back', %>
+<%= link_to 'Edit', %>
+<%= link_to 'Delete', %>
