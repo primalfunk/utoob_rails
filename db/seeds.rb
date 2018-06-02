@@ -261,3 +261,11 @@ Movie.create(
   description: 'http://www.imdb.com/title/tt0117802/',
   trailer: 'https://www.youtube.com/embed/nWCct8XbQD0'
 )
+
+i = 1
+Movie.all.each do
+  3.times do
+    Comment.create(body: "I liked this movie alright.", username: "Default User", movie_id: i)
+  end
+  i += 1
+end

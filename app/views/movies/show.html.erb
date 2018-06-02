@@ -7,10 +7,8 @@
 <%= link_to 'Create New Comment', new_movie_comment_path(@movie) %>
 <h3>User comments for: <%= @movie.title %></h3>
 <% @movie.comments.each do |comment| %>
- <%= comment.body %>
+ <%= comment.username %> | <%= comment.body %>
  <%= link_to 'Edit', edit_movie_comment_path(comment.movie_id) %> |
  <%= link_to 'Delete', [@movie, comment], method: :delete %>
  <hr />
 <% end %>
-
-

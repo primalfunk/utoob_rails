@@ -20,6 +20,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @movie.comments.new(comment_params)
+    @comment.username = current_user.first_name
 
     if @comment.save
       redirect_to [@movie, @comment]
@@ -51,6 +52,6 @@ class CommentsController < ApplicationController
     end
 
     def comment_params
-      params.require(:comment).permit(:body)
+      params.require(:comment).permit(:body, :username)
     end
 end
