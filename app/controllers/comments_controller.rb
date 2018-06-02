@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
     @comment.username = current_user.first_name
 
     if @comment.save
-      redirect_to [@movie, @comment]
+      redirect_to movie_path(@movie)
     else
       render :new
     end
@@ -39,7 +39,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment.destroy
-    redirect_to movie_comments_path
+    redirect_to movie_path(@movie)
   end
 
   private
