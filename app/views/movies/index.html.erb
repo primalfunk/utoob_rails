@@ -20,7 +20,7 @@
              <%= link_to 'Edit', edit_movie_path(movie) %>
            </div>
            <div class="basic red button">
-             <%= link_to 'Destroy', movie_path(movie), method: :delete, data: { confirm: 'Are you sure?' } %>
+             <%= link_to 'Destroy', movie_path(movie), method: :delete, data: { confirm: "Promise you're an admin?" } %>
            </div>
          </div>
        </div>
